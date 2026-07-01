@@ -1,453 +1,237 @@
-/* ======================================================
-   VARIÁVEIS
-====================================================== */
-
-:root{
-
-    --background:#070707;
-    --background-light:#141414;
-
-    --white:#ffffff;
-    --text:#d9d9d9;
-    --text-light:#999;
-
-    --gold:#d6b15c;
-    --gold-light:#f1d07a;
-
-    --border:rgba(255,255,255,.08);
-
-    --shadow:0 15px 40px rgba(0,0,0,.45);
-
-    --transition:.35s;
-
+:root {
+  --background: #fff8fb;
+  --background-soft: #ffeef3;
+  --background-gold: #fff6dc;
+  --white: #ffffff;
+  --text: #6f4f5b;
+  --text-strong: #46313b;
+  --accent: #ffb6c1;
+  --accent-strong: #ff8da3;
+  --accent-soft: #ffd9e3;
+  --gold: #f5d37d;
+  --gold-soft: #fff1c4;
+  --border: rgba(255, 141, 163, 0.22);
+  --shadow: 0 16px 40px rgba(255, 182, 193, 0.2);
+  --transition: 0.3s ease;
 }
 
-/* ======================================================
-   BODY
-====================================================== */
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    color:var(--white);
-
-    background:
-        radial-gradient(circle at top,#34220f 0%,#161616 35%,#080808 100%);
-
-    overflow-x:hidden;
-
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-strong);
+  background: linear-gradient(135deg, #fffafc 0%, #ffeef3 45%, #fff7e8 100%);
+  overflow-x: hidden;
 }
 
-/* ======================================================
-   FUNDO
-====================================================== */
-
-.background{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:-3;
-
-    background:
-        radial-gradient(circle at center,
-            rgba(255,180,70,.12),
-            transparent 45%);
-
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: radial-gradient(circle at top, rgba(255, 182, 193, 0.25), transparent 38%);
 }
 
-.background::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        radial-gradient(circle at top,
-        rgba(255,170,0,.05),
-        transparent 30%);
-
+.background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(245, 211, 125, 0.16), transparent 24%);
 }
 
-.background::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(to bottom,
-        transparent,
-        rgba(0,0,0,.55));
-
+.background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
 }
 
-/* ======================================================
-   CONTAINER
-====================================================== */
-
-.container{
-
-    width:min(900px,92%);
-
-    margin:auto;
-
-    min-height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:80px 20px;
-
+.container {
+  width: min(900px, 94%);
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px 48px;
 }
 
-/* ======================================================
-   HERO
-====================================================== */
-
-.hero{
-
-    text-align:center;
-
-    margin-bottom:60px;
-
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
 }
 
-.hero h1{
-
-    font-family:'Cinzel',serif;
-
-    font-size:clamp(42px,6vw,72px);
-
-    font-weight:600;
-
-    letter-spacing:4px;
-
-    color:var(--gold);
-
-    text-shadow:
-
-        0 0 10px rgba(255,200,80,.3),
-
-        0 0 30px rgba(255,200,80,.15);
-
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-strong);
 }
 
-.hero p{
-
-    margin-top:18px;
-
-    color:var(--text);
-
-    font-size:18px;
-
-    font-weight:300;
-
+.hero p {
+  margin-top: 10px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 300;
 }
 
-/* ======================================================
-   STATUS
-====================================================== */
-
-.status{
-
-    text-align:center;
-
-    margin-top:40px;
-
-    margin-bottom:35px;
-
+.status {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 20px;
 }
 
-.status h2{
-
-    font-family:'Cinzel',serif;
-
-    color:var(--gold);
-
-    font-size:30px;
-
-    margin-bottom:12px;
-
+.status h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--text-strong);
+  font-size: 1.25rem;
+  margin-bottom: 8px;
 }
 
-.status p{
-
-    color:var(--text);
-
-    font-size:17px;
-
+.status p {
+  color: var(--text);
+  font-size: 0.95rem;
 }
 
-/* ======================================================
-   ÁREA DA MENSAGEM
-====================================================== */
-
-.message-area{
-
-    width:100%;
-
-    max-width:650px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
+.message-area {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.message-area label{
-
-    font-size:18px;
-
-    color:var(--gold);
-
-    font-weight:600;
-
+.message-area label {
+  font-size: 0.95rem;
+  color: var(--text-strong);
+  font-weight: 600;
 }
 
-.message-area textarea{
-
-    width:100%;
-
-    height:170px;
-
-    padding:20px;
-
-    border-radius:18px;
-
-    border:1px solid var(--border);
-
-    background:rgba(255,255,255,.04);
-
-    color:white;
-
-    font-size:16px;
-
-    transition:var(--transition);
-
-    backdrop-filter:blur(8px);
-
+.message-area textarea {
+  width: 100%;
+  min-height: 130px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-strong);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  box-shadow: inset 0 1px 2px rgba(255, 182, 193, 0.14);
 }
 
-.message-area textarea::placeholder{
-
-    color:#777;
-
+.message-area textarea::placeholder {
+  color: #b08792;
 }
 
-.message-area textarea:focus{
-
-    border-color:var(--gold);
-
-    box-shadow:
-
-        0 0 25px rgba(255,200,80,.18);
-
+.message-area textarea:focus {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.16);
+  outline: none;
 }
 
-#counter{
-
-    text-align:right;
-
-    color:#888;
-
-    font-size:14px;
-
+#counter {
+  text-align: right;
+  color: #a07b86;
+  font-size: 0.8rem;
 }
 
-/* ======================================================
-   BOTÕES
-====================================================== */
-
-.buttons{
-
-    display:flex;
-
-    gap:18px;
-
-    margin:45px 0;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.buttons button{
-
-    min-width:220px;
-
-    padding:18px 28px;
-
-    border-radius:50px;
-
-    font-size:17px;
-
-    font-weight:600;
-
-    transition:.3s;
-
+.buttons button {
+  min-width: 180px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 
-.primary{
-
-    background:linear-gradient(
-        135deg,
-        #d6b15c,
-        #f3d98d);
-
-    color:#111;
-
-    box-shadow:
-
-        0 10px 25px rgba(214,177,92,.35);
-
+.primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+  color: #5b3f1b;
 }
 
-.primary:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-
-        0 15px 35px rgba(214,177,92,.45);
-
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(245, 211, 125, 0.28);
 }
 
-.secondary{
-
-    background:#242424;
-
-    color:white;
-
-    border:1px solid rgba(255,255,255,.08);
-
+.secondary {
+  background: linear-gradient(135deg, var(--accent-soft), var(--white));
+  color: var(--text-strong);
+  border: 1px solid rgba(255, 141, 163, 0.16);
 }
 
-.secondary:hover{
-
-    background:#333;
-
+.secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 182, 193, 0.16);
 }
 
-/* ======================================================
-   HOMENAGEM
-====================================================== */
-
-.tribute{
-
-    width:100%;
-
-    max-width:700px;
-
-    background:rgba(255,255,255,.04);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:20px;
-
-    padding:30px;
-
-    text-align:center;
-
-    backdrop-filter:blur(10px);
-
+.tribute {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 141, 163, 0.16);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
 }
 
-.tribute h3{
-
-    font-family:'Cinzel',serif;
-
-    color:var(--gold);
-
-    margin-bottom:20px;
-
+.tribute h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--text-strong);
+  margin-bottom: 10px;
 }
 
-.tribute p{
-
-    color:var(--text);
-
-    line-height:1.9;
-
-    white-space:pre-wrap;
-
+.tribute p {
+  color: var(--text);
+  line-height: 1.7;
+  white-space: pre-wrap;
 }
 
-/* ======================================================
-   TIMER
-====================================================== */
-
-.timer{
-
-    margin-top:25px;
-
-    color:var(--gold-light);
-
-    font-size:18px;
-
-    display:flex;
-
-    gap:10px;
-
-    align-items:center;
-
+.timer {
+  margin-top: 16px;
+  color: var(--text-strong);
+  font-size: 0.95rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
-/* ======================================================
-   FOOTER
-====================================================== */
-
-footer{
-
-    padding:35px;
-
-    text-align:center;
-
-    border-top:1px solid rgba(255,255,255,.05);
-
-    color:#777;
-
+footer {
+  padding: 24px 16px 32px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 141, 163, 0.18);
+  color: #9a7480;
 }
 
-footer strong{
-
-    color:var(--gold);
-
+footer strong {
+  color: var(--text-strong);
 }
 
-/* ======================================================
-   CLASSES UTILITÁRIAS
-====================================================== */
-
-.hidden{
-
-    display:none;
-
+.hidden {
+  display: none;
 }
-
-/* ==========================================
-   MODO ESCURO (EXTRA / CINEMATOGRÁFICO)
-========================================== */
 
 body.dark-mode {
-    background:
-        radial-gradient(circle at top,
-        #000000 0%,
-        #050505 40%,
-        #000000 100%);
-    filter: brightness(0.9) contrast(1.1);
+  background: linear-gradient(135deg, #fff8fb 0%, #ffeef3 50%, #fff9e8 100%);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  min-height: 48px;
+}
+
+.buttons button:active {
+  transform: scale(0.97);
 }

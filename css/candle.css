@@ -1,346 +1,148 @@
-/* ==========================================
-   MEMORIAL
-========================================== */
-
-.memorial{
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin:40px 0 20px;
-
-    width:100%;
-    height:360px;
-
+.memorial {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 8px;
+  width: 100%;
+  min-height: 240px;
 }
 
-/* ==========================================
-   LUZ DA VELA
-========================================== */
-
-.light{
-
-    position:absolute;
-
-    width:280px;
-    height:280px;
-
-    border-radius:50%;
-
-    background:radial-gradient(
-        circle,
-        rgba(255,210,120,.45),
-        rgba(255,170,0,.18),
-        transparent 70%
-    );
-
-    filter:blur(35px);
-
-    opacity:0;
-
-    transition:.5s;
-
-    pointer-events:none;
-
+.light {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 123, 0.45), rgba(255, 182, 193, 0.18), transparent 70%);
+  filter: blur(28px);
+  opacity: 0;
+  transition: 0.4s ease;
+  pointer-events: none;
 }
 
-/* Quando a vela estiver acesa */
-
-.light.active{
-
-    opacity:1;
-
+.light.active {
+  opacity: 1;
 }
 
-/* ==========================================
-   VELA
-========================================== */
-
-.candle{
-
-    position:relative;
-
-    width:90px;
-
-    height:240px;
-
-    display:flex;
-
-    justify-content:center;
-
+.candle {
+  position: relative;
+  width: 92px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: transform 0.25s ease;
 }
 
-/* ==========================================
-   CERA
-========================================== */
-
-.wax{
-
-    position:absolute;
-
-    bottom:0;
-
-    width:90px;
-
-    height:210px;
-
-    border-radius:16px;
-
-    background:
-
-        linear-gradient(
-            to right,
-            #dadada,
-            #ffffff 30%,
-            #ececec 60%,
-            #cfcfcf
-        );
-
-    box-shadow:
-
-        inset -8px 0 12px rgba(0,0,0,.12),
-
-        inset 8px 0 12px rgba(255,255,255,.55),
-
-        0 18px 40px rgba(0,0,0,.4);
-
+.candle:hover {
+  transform: translateY(-2px);
 }
 
-/* Topo da vela */
-
-.wax::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-8px;
-
-    left:0;
-
-    width:100%;
-
-    height:18px;
-
-    border-radius:50%;
-
-    background:#f6f6f6;
-
+.candle:focus-visible {
+  outline: 2px solid rgba(255, 141, 163, 0.45);
+  outline-offset: 6px;
 }
 
-/* ==========================================
-   CERA DERRETIDA
-========================================== */
-
-.wax::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:18px;
-
-    top:35px;
-
-    width:8px;
-
-    height:55px;
-
-    border-radius:20px;
-
-    background:#efefef;
-
-    box-shadow:
-
-        -25px 20px 0 2px #f3f3f3,
-
-        18px 45px 0 1px #ededed;
-
+.wax {
+  position: absolute;
+  bottom: 0;
+  width: 92px;
+  height: 170px;
+  border-radius: 16px 16px 12px 12px;
+  background: linear-gradient(135deg, #fff1cc 0%, #f9e199 35%, #f5d37d 100%);
+  box-shadow: inset -8px 0 12px rgba(255, 255, 255, 0.28), inset 8px 0 12px rgba(255, 255, 255, 0.35), 0 14px 22px rgba(245, 211, 125, 0.24);
 }
 
-/* ==========================================
-   PAVIO
-========================================== */
-
-.wick{
-
-    position:absolute;
-
-    top:18px;
-
-    width:4px;
-
-    height:24px;
-
-    background:#222;
-
-    border-radius:30px;
-
-    z-index:4;
-
+.wax::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #fff7de, #f5d37d);
 }
 
-/* ==========================================
-   CHAMA
-========================================== */
-
-.flame{
-
-    position:absolute;
-
-    top:-55px;
-
-    width:30px;
-
-    height:58px;
-
-    border-radius:
-
-        50% 50% 45% 45%;
-
-    transform-origin:center bottom;
-
-    z-index:10;
-
-    background:
-
-        radial-gradient(circle at 50% 25%,
-
-        #ffffff,
-
-        #fff7a6 25%,
-
-        #ffd000 45%,
-
-        #ff8f00 75%,
-
-        transparent 100%);
-
-    filter:
-
-        drop-shadow(0 0 10px rgba(255,180,0,.8))
-
-        drop-shadow(0 0 25px rgba(255,140,0,.45));
-
+.wax::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 28px;
+  width: 8px;
+  height: 48px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: -18px 18px 0 0 rgba(255, 255, 255, 0.4), 20px 32px 0 0 rgba(255, 255, 255, 0.28);
 }
 
-/* ==========================================
-   BASE
-========================================== */
-
-.base{
-
-    position:absolute;
-
-    bottom:-10px;
-
-    width:130px;
-
-    height:18px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(circle,
-
-        rgba(0,0,0,.55),
-
-        rgba(0,0,0,0));
-
+.wick {
+  position: absolute;
+  top: 14px;
+  width: 4px;
+  height: 24px;
+  background: #6a4935;
+  border-radius: 999px;
+  z-index: 4;
 }
 
-/* ==========================================
-   FUMAÇA
-========================================== */
-
-.smoke{
-
-    position:absolute;
-
-    top:-20px;
-
-    width:14px;
-
-    height:14px;
-
-    border-radius:50%;
-
-    background:rgba(220,220,220,.55);
-
-    filter:blur(6px);
-
-    opacity:0;
-
-    pointer-events:none;
-
+.flame {
+  position: absolute;
+  top: -50px;
+  width: 28px;
+  height: 56px;
+  border-radius: 50% 50% 45% 45%;
+  transform-origin: center bottom;
+  z-index: 10;
+  background: radial-gradient(circle at 50% 25%, #fffef6, #fff2b2 30%, #ffd97d 50%, #ffb6c1 80%, transparent 100%);
+  filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.4)) drop-shadow(0 0 18px rgba(245, 211, 125, 0.3));
+  opacity: 0.16;
+  transition: opacity 0.25s ease;
 }
 
-/* Mostrar fumaça */
-
-.smoke.active{
-
-    animation:smokeRise 2.2s ease forwards;
-
+.candle.lit .flame {
+  opacity: 1;
 }
 
-/* ==========================================
-   SOMBRA DA VELA
-========================================== */
-
-.candle::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-28px;
-
-    width:140px;
-
-    height:26px;
-
-    background:
-
-        radial-gradient(circle,
-
-        rgba(0,0,0,.45),
-
-        transparent);
-
-    filter:blur(8px);
-
+.base {
+  position: absolute;
+  bottom: -10px;
+  width: 112px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f9dbb0, #e8b56f);
+  box-shadow: 0 8px 16px rgba(90, 63, 27, 0.18);
 }
 
-/* ==========================================
-   VELA ACESA
-========================================== */
-
-.candle.lit .wax{
-
-    box-shadow:
-
-        inset -8px 0 10px rgba(0,0,0,.1),
-
-        inset 8px 0 10px rgba(255,255,255,.6),
-
-        0 0 35px rgba(255,220,120,.18),
-
-        0 20px 45px rgba(0,0,0,.45);
-
+.smoke {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  width: 10px;
+  height: 64px;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* ==========================================
-   ESCONDER
-========================================== */
+.smoke.active {
+  animation: smokeRise 1.1s ease-out forwards;
+}
 
-.hidden{
+.candle::after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  width: 130px;
+  height: 22px;
+  background: radial-gradient(circle, rgba(90, 63, 27, 0.2), transparent);
+  filter: blur(8px);
+}
 
-    display:none;
+.candle.lit .wax {
+  box-shadow: inset -8px 0 10px rgba(255, 255, 255, 0.32), inset 8px 0 10px rgba(255, 255, 255, 0.42), 0 0 30px rgba(255, 214, 123, 0.2), 0 14px 28px rgba(90, 63, 27, 0.18);
+}
 
+.hidden {
+  display: none;
 }

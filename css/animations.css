@@ -1,250 +1,110 @@
-/* ==========================================
-   CHAMA
-========================================== */
-
 @keyframes flame {
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(-2deg)
-            scale(1);
-
-    }
-
-    20%{
-
-        transform:
-            translateY(-1px)
-            rotate(2deg)
-            scale(1.03);
-
-    }
-
-    40%{
-
-        transform:
-            translateY(1px)
-            rotate(-1deg)
-            scale(.98);
-
-    }
-
-    60%{
-
-        transform:
-            translateY(-2px)
-            rotate(3deg)
-            scale(1.05);
-
-    }
-
-    80%{
-
-        transform:
-            translateY(0)
-            rotate(-2deg)
-            scale(1);
-
-    }
-
-    100%{
-
-        transform:
-            translateY(-1px)
-            rotate(2deg)
-            scale(1.04);
-
-    }
-
+  0% {
+    transform: translateY(0) rotate(-2deg) scale(1);
+  }
+  25% {
+    transform: translateY(-1px) rotate(2deg) scale(1.03);
+  }
+  50% {
+    transform: translateY(1px) rotate(-1deg) scale(0.98);
+  }
+  75% {
+    transform: translateY(-2px) rotate(2.5deg) scale(1.04);
+  }
+  100% {
+    transform: translateY(-1px) rotate(-1.5deg) scale(1.01);
+  }
 }
 
-.flame{
-
-    animation:flame .18s infinite alternate ease-in-out;
-
+@keyframes glow {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.45;
+    transform: scale(0.98);
+  }
 }
 
-
-/* ==========================================
-   BRILHO DA LUZ
-========================================== */
-
-@keyframes glow{
-
-    0%{
-
-        opacity:.35;
-        transform:scale(.95);
-
-    }
-
-    50%{
-
-        opacity:.75;
-        transform:scale(1.05);
-
-    }
-
-    100%{
-
-        opacity:.45;
-        transform:scale(.98);
-
-    }
-
+@keyframes smokeRise {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(0.5);
+  }
+  25% {
+    opacity: 0.6;
+    transform: translateY(-16px) translateX(-4px) scale(0.78);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-38px) translateX(6px) scale(1.05);
+  }
+  75% {
+    opacity: 0.18;
+    transform: translateY(-62px) translateX(-6px) scale(1.24);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-88px) scale(1.5);
+  }
 }
 
-.light.active{
-
-    animation:glow 2.5s infinite ease-in-out;
-
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-120px) scale(0.4);
+    opacity: 0;
+  }
 }
 
-
-/* ==========================================
-   FUMAÇA
-========================================== */
-
-@keyframes smokeRise{
-
-    0%{
-
-        opacity:.8;
-
-        transform:
-            translateY(0)
-            scale(.5);
-
-    }
-
-    25%{
-
-        opacity:.6;
-
-        transform:
-            translateY(-20px)
-            translateX(-5px)
-            scale(.8);
-
-    }
-
-    50%{
-
-        opacity:.4;
-
-        transform:
-            translateY(-45px)
-            translateX(8px)
-            scale(1.1);
-
-    }
-
-    75%{
-
-        opacity:.2;
-
-        transform:
-            translateY(-70px)
-            translateX(-8px)
-            scale(1.4);
-
-    }
-
-    100%{
-
-        opacity:0;
-
-        transform:
-            translateY(-100px)
-            scale(1.8);
-
-    }
-
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
-/* ==========================================
-   FADE
-========================================== */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
-
-    }
-
+.candle.lit .flame {
+  animation: flame 0.16s infinite alternate ease-in-out;
 }
 
-.tribute{
-
-    animation:fadeUp .7s ease;
-
+.light.active {
+  animation: glow 2.4s infinite ease-in-out;
 }
 
-.timer{
-
-    animation:fadeUp .7s ease;
-
+.tribute,
+.timer {
+  animation: fadeUp 0.6s ease;
 }
 
-
-/* ==========================================
-   BOTÕES
-========================================== */
-
-.primary{
-
-    transition:
-        transform .25s,
-        box-shadow .25s;
-
+.primary,
+.secondary {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.primary:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-
-        0 0 20px rgba(255,215,120,.5),
-
-        0 10px 35px rgba(255,170,0,.4);
-
+.primary:hover {
+  transform: translateY(-2px);
 }
 
-.primary:active{
-
-    transform:scale(.97);
-
+.primary:active,
+.secondary:active {
+  transform: scale(0.97);
 }
 
-.secondary{
-
-    transition:
-        .3s;
-
-}
-
-.secondary:hover{
-
-    transform:translateY(-2px);
-
+.secondary:hover {
+  transform: translateY(-2px);
 }
 
 
@@ -377,3 +237,22 @@
 
 }
 
+.particle {
+    position: absolute;
+    background: rgba(255, 215, 120, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(0.5px);
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-220px) translateX(-20px) scale(1.4);
+        opacity: 0;
+    }
+}
