@@ -1,0 +1,379 @@
+/* ==========================================
+   CHAMA
+========================================== */
+
+@keyframes flame {
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(-2deg)
+            scale(1);
+
+    }
+
+    20%{
+
+        transform:
+            translateY(-1px)
+            rotate(2deg)
+            scale(1.03);
+
+    }
+
+    40%{
+
+        transform:
+            translateY(1px)
+            rotate(-1deg)
+            scale(.98);
+
+    }
+
+    60%{
+
+        transform:
+            translateY(-2px)
+            rotate(3deg)
+            scale(1.05);
+
+    }
+
+    80%{
+
+        transform:
+            translateY(0)
+            rotate(-2deg)
+            scale(1);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-1px)
+            rotate(2deg)
+            scale(1.04);
+
+    }
+
+}
+
+.flame{
+
+    animation:flame .18s infinite alternate ease-in-out;
+
+}
+
+
+/* ==========================================
+   BRILHO DA LUZ
+========================================== */
+
+@keyframes glow{
+
+    0%{
+
+        opacity:.35;
+        transform:scale(.95);
+
+    }
+
+    50%{
+
+        opacity:.75;
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        opacity:.45;
+        transform:scale(.98);
+
+    }
+
+}
+
+.light.active{
+
+    animation:glow 2.5s infinite ease-in-out;
+
+}
+
+
+/* ==========================================
+   FUMAÇA
+========================================== */
+
+@keyframes smokeRise{
+
+    0%{
+
+        opacity:.8;
+
+        transform:
+            translateY(0)
+            scale(.5);
+
+    }
+
+    25%{
+
+        opacity:.6;
+
+        transform:
+            translateY(-20px)
+            translateX(-5px)
+            scale(.8);
+
+    }
+
+    50%{
+
+        opacity:.4;
+
+        transform:
+            translateY(-45px)
+            translateX(8px)
+            scale(1.1);
+
+    }
+
+    75%{
+
+        opacity:.2;
+
+        transform:
+            translateY(-70px)
+            translateX(-8px)
+            scale(1.4);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translateY(-100px)
+            scale(1.8);
+
+    }
+
+}
+
+
+/* ==========================================
+   FADE
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+.tribute{
+
+    animation:fadeUp .7s ease;
+
+}
+
+.timer{
+
+    animation:fadeUp .7s ease;
+
+}
+
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+.primary{
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 0 20px rgba(255,215,120,.5),
+
+        0 10px 35px rgba(255,170,0,.4);
+
+}
+
+.primary:active{
+
+    transform:scale(.97);
+
+}
+
+.secondary{
+
+    transition:
+        .3s;
+
+}
+
+.secondary:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================
+   TEXTAREA
+========================================== */
+
+.message-area textarea{
+
+    transition:
+        border-color .3s,
+        box-shadow .3s,
+        background .3s;
+
+}
+
+.message-area textarea:focus{
+
+    background:rgba(255,255,255,.06);
+
+}
+
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
+@keyframes titleGlow{
+
+    0%{
+
+        text-shadow:
+
+        0 0 8px rgba(255,200,100,.15);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+        0 0 18px rgba(255,210,120,.45),
+
+        0 0 35px rgba(255,170,0,.25);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+        0 0 8px rgba(255,200,100,.15);
+
+    }
+
+}
+
+.hero h1{
+
+    animation:titleGlow 4s infinite ease-in-out;
+
+}
+
+
+/* ==========================================
+   CARD DA HOMENAGEM
+========================================== */
+
+.tribute{
+
+    transition:.4s;
+
+}
+
+.tribute:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 15px 40px rgba(0,0,0,.35);
+
+}
+
+
+/* ==========================================
+   CRONÔMETRO
+========================================== */
+
+.timer strong{
+
+    color:#f5d37d;
+
+    font-size:22px;
+
+}
+
+
+/* ==========================================
+   ENTRADA DA VELA
+========================================== */
+
+@keyframes candleAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(40px)
+            scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+.memorial{
+
+    animation:candleAppear .9s ease;
+
+}
+

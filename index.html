@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Acenda uma vela virtual em homenagem a Eduarda Ferreira">
+
+    <title>Eduarda Ferreira • Acenda uma Vela</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/reset.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/candle.css">
+
+    <link rel="stylesheet"
+          href="css/animations.css">
+
+    <link rel="stylesheet"
+          href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- Fundo -->
+
+    <div class="background"></div>
+
+    <!-- Partículas -->
+
+    <div id="particles"></div>
+
+    <!-- Conteúdo -->
+
+    <main class="container">
+
+        <!-- Cabeçalho -->
+
+        <header class="hero">
+
+            <h1>
+
+                Eduarda Ferreira
+
+            </h1>
+
+            <p>
+
+                Uma chama representa uma lembrança eterna.
+
+            </p>
+
+        </header>
+
+        <!-- Memorial -->
+
+        <section class="memorial">
+
+            <!-- Luz -->
+
+            <div class="light"></div>
+
+            <!-- Vela -->
+
+            <div class="candle">
+
+                <div class="flame hidden"></div>
+
+                <div class="wick"></div>
+
+                <div class="wax"></div>
+
+                <div class="base"></div>
+
+                <div class="smoke"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Status -->
+
+        <section class="status">
+
+            <h2 id="statusTitle">
+
+                A vela está apagada
+
+            </h2>
+
+            <p id="statusText">
+
+                Escreva uma mensagem e acenda uma vela.
+
+            </p>
+
+        </section>
+
+        <!-- Mensagem -->
+
+        <section class="message-area">
+
+            <label for="message">
+
+                Sua homenagem
+
+            </label>
+
+            <textarea
+
+                id="message"
+
+                maxlength="250"
+
+                placeholder="Escreva uma homenagem para Eduarda...">
+
+            </textarea>
+
+            <span id="counter">
+
+                0 / 250
+
+            </span>
+
+        </section>
+
+        <!-- Botões -->
+
+        <section class="buttons">
+
+            <button
+
+                id="btnLight"
+
+                class="primary">
+
+                🔥 Acender Vela
+
+            </button>
+
+            <button
+
+                id="btnOff"
+
+                class="secondary">
+
+                🕯 Apagar
+
+            </button>
+
+        </section>
+
+        <!-- Mensagem exibida -->
+
+        <section
+
+            id="tribute"
+
+            class="tribute hidden">
+
+            <h3>
+
+                Sua homenagem
+
+            </h3>
+
+            <p id="tributeText">
+
+            </p>
+
+        </section>
+
+        <!-- Tempo -->
+
+        <section
+
+            id="timer"
+
+            class="timer hidden">
+
+            <span>
+
+                Tempo da vela acesa
+
+            </span>
+
+            <strong id="time">
+
+                00:00
+
+            </strong>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+
+            Desenvolvido com carinho em memória de
+
+            <strong>Eduarda Ferreira</strong>
+
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="js/candle.js"></script>
+
+    <script src="js/particles.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+<audio id="bg-sound" loop>
+    <source src="audio/ambiente.mp3" type="audio/mp3">
+</audio>

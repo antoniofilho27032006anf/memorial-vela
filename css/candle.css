@@ -1,0 +1,346 @@
+/* ==========================================
+   MEMORIAL
+========================================== */
+
+.memorial{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:40px 0 20px;
+
+    width:100%;
+    height:360px;
+
+}
+
+/* ==========================================
+   LUZ DA VELA
+========================================== */
+
+.light{
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,210,120,.45),
+        rgba(255,170,0,.18),
+        transparent 70%
+    );
+
+    filter:blur(35px);
+
+    opacity:0;
+
+    transition:.5s;
+
+    pointer-events:none;
+
+}
+
+/* Quando a vela estiver acesa */
+
+.light.active{
+
+    opacity:1;
+
+}
+
+/* ==========================================
+   VELA
+========================================== */
+
+.candle{
+
+    position:relative;
+
+    width:90px;
+
+    height:240px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+/* ==========================================
+   CERA
+========================================== */
+
+.wax{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:90px;
+
+    height:210px;
+
+    border-radius:16px;
+
+    background:
+
+        linear-gradient(
+            to right,
+            #dadada,
+            #ffffff 30%,
+            #ececec 60%,
+            #cfcfcf
+        );
+
+    box-shadow:
+
+        inset -8px 0 12px rgba(0,0,0,.12),
+
+        inset 8px 0 12px rgba(255,255,255,.55),
+
+        0 18px 40px rgba(0,0,0,.4);
+
+}
+
+/* Topo da vela */
+
+.wax::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-8px;
+
+    left:0;
+
+    width:100%;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#f6f6f6;
+
+}
+
+/* ==========================================
+   CERA DERRETIDA
+========================================== */
+
+.wax::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:18px;
+
+    top:35px;
+
+    width:8px;
+
+    height:55px;
+
+    border-radius:20px;
+
+    background:#efefef;
+
+    box-shadow:
+
+        -25px 20px 0 2px #f3f3f3,
+
+        18px 45px 0 1px #ededed;
+
+}
+
+/* ==========================================
+   PAVIO
+========================================== */
+
+.wick{
+
+    position:absolute;
+
+    top:18px;
+
+    width:4px;
+
+    height:24px;
+
+    background:#222;
+
+    border-radius:30px;
+
+    z-index:4;
+
+}
+
+/* ==========================================
+   CHAMA
+========================================== */
+
+.flame{
+
+    position:absolute;
+
+    top:-55px;
+
+    width:30px;
+
+    height:58px;
+
+    border-radius:
+
+        50% 50% 45% 45%;
+
+    transform-origin:center bottom;
+
+    z-index:10;
+
+    background:
+
+        radial-gradient(circle at 50% 25%,
+
+        #ffffff,
+
+        #fff7a6 25%,
+
+        #ffd000 45%,
+
+        #ff8f00 75%,
+
+        transparent 100%);
+
+    filter:
+
+        drop-shadow(0 0 10px rgba(255,180,0,.8))
+
+        drop-shadow(0 0 25px rgba(255,140,0,.45));
+
+}
+
+/* ==========================================
+   BASE
+========================================== */
+
+.base{
+
+    position:absolute;
+
+    bottom:-10px;
+
+    width:130px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(circle,
+
+        rgba(0,0,0,.55),
+
+        rgba(0,0,0,0));
+
+}
+
+/* ==========================================
+   FUMAÇA
+========================================== */
+
+.smoke{
+
+    position:absolute;
+
+    top:-20px;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:rgba(220,220,220,.55);
+
+    filter:blur(6px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+/* Mostrar fumaça */
+
+.smoke.active{
+
+    animation:smokeRise 2.2s ease forwards;
+
+}
+
+/* ==========================================
+   SOMBRA DA VELA
+========================================== */
+
+.candle::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-28px;
+
+    width:140px;
+
+    height:26px;
+
+    background:
+
+        radial-gradient(circle,
+
+        rgba(0,0,0,.45),
+
+        transparent);
+
+    filter:blur(8px);
+
+}
+
+/* ==========================================
+   VELA ACESA
+========================================== */
+
+.candle.lit .wax{
+
+    box-shadow:
+
+        inset -8px 0 10px rgba(0,0,0,.1),
+
+        inset 8px 0 10px rgba(255,255,255,.6),
+
+        0 0 35px rgba(255,220,120,.18),
+
+        0 20px 45px rgba(0,0,0,.45);
+
+}
+
+/* ==========================================
+   ESCONDER
+========================================== */
+
+.hidden{
+
+    display:none;
+
+}

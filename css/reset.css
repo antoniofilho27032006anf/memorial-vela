@@ -1,0 +1,91 @@
+/* ==========================================
+   RESET GERAL
+========================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg{
+    display:block;
+    max-width:100%;
+}
+
+input,
+button,
+textarea,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+    background:none;
+    border:none;
+}
+
+textarea{
+    resize:none;
+}
+
+ul,
+ol{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+:focus{
+    outline:none;
+}
+
+::selection{
+    background:#d4a43d;
+    color:#fff;
+}
+
+/* Barra de rolagem */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#6b5424;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#c79b3b;
+}

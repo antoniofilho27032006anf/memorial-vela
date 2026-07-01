@@ -1,0 +1,128 @@
+/* ==========================================
+   TABLETS (até 1024px)
+========================================== */
+
+@media (max-width: 1024px){
+
+    .container{
+        padding:60px 18px;
+    }
+
+    .hero h1{
+        font-size:clamp(36px,5vw,60px);
+        letter-spacing:3px;
+    }
+
+    .memorial{
+        height:320px;
+    }
+
+    .candle{
+        transform:scale(.95);
+    }
+
+    .buttons button{
+        min-width:200px;
+    }
+}
+
+/* ==========================================
+   CELULARES (até 768px)
+========================================== */
+
+@media (max-width: 768px){
+
+    .container{
+        padding:50px 15px;
+    }
+
+    .hero h1{
+        font-size:34px;
+        letter-spacing:2px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .memorial{
+        height:280px;
+    }
+
+    .candle{
+        transform:scale(.85);
+    }
+
+    .light{
+        width:220px;
+        height:220px;
+    }
+
+    .message-area textarea{
+        height:140px;
+        font-size:15px;
+    }
+
+    .buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .buttons button{
+        width:100%;
+        max-width:320px;
+    }
+
+    .tribute{
+        padding:22px;
+    }
+}
+
+/* ==========================================
+   CELULARES PEQUENOS (até 480px)
+========================================== */
+
+@media (max-width: 480px){
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .status h2{
+        font-size:24px;
+    }
+
+    .status p{
+        font-size:15px;
+    }
+
+    .memorial{
+        height:240px;
+    }
+
+    .candle{
+        transform:scale(.75);
+    }
+
+    .wax{
+        width:80px;
+    }
+
+    .flame{
+        width:26px;
+        height:50px;
+    }
+
+    .message-area label{
+        font-size:16px;
+    }
+
+    .message-area textarea{
+        height:120px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:25px;
+    }
+}
