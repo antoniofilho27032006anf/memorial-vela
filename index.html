@@ -24,7 +24,16 @@
   </head>
 
   <body>
-    <div class="background"></div>
+    <div class="background" aria-hidden="true">
+      <div class="background__halo background__halo--primary"></div>
+      <div class="background__halo background__halo--secondary"></div>
+      <div class="background__dust">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
     <div id="particles"></div>
 
     <main class="container">
@@ -47,12 +56,11 @@
 
       <section class="status">
         <h2 id="statusTitle">A vela está apagada</h2>
-        <p id="statusText">Escreva uma mensagem e acenda uma vela para trazer luz à sua semana.</p>
+        <p id="statusText"></p>
       </section>
 
       <section class="message-area">
-        <label for="message">Sua homenagem</label>
-        <textarea id="message" maxlength="250" placeholder="Escreva uma mensagem inspiradora para Eduarda..."></textarea>
+        <textarea id="message" maxlength="250"></textarea>
         <span id="counter">0 / 250</span>
       </section>
 
@@ -62,7 +70,6 @@
       </section>
 
       <section id="tribute" class="tribute hidden">
-        <h3>Sua homenagem</h3>
         <p id="tributeText"></p>
       </section>
 

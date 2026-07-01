@@ -20,9 +20,7 @@ function updateStatus() {
   if (!statusTitle || !statusText) return;
 
   statusTitle.textContent = isLit ? 'A vela está acesa' : 'A vela está apagada';
-  statusText.textContent = isLit
-    ? 'Sua semana ganha mais luz e energia positiva.'
-    : 'Escreva uma mensagem e acenda uma vela para trazer luz à sua semana.';
+  statusText.textContent = '';
 }
 
 function lightCandle() {
@@ -74,7 +72,7 @@ candle?.addEventListener('keydown', (event) => {
 
 textarea?.addEventListener('input', () => {
   const text = textarea.value;
-  tributeText && (tributeText.textContent = text || 'A homenagem aparecerá aqui...');
+  tributeText && (tributeText.textContent = text || '');
   counter && (counter.textContent = `${text.length} / 250`);
   localStorage.setItem('tribute', text);
 });
