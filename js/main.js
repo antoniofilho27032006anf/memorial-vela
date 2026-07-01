@@ -4,7 +4,6 @@ const light = document.querySelector('.light');
 const smoke = document.querySelectorAll('.smoke');
 
 const textarea = document.querySelector('textarea');
-const tributeText = document.querySelector('.tribute p');
 const counter = document.getElementById('counter');
 
 const btnLight = document.querySelector('.primary');
@@ -72,7 +71,6 @@ candle?.addEventListener('keydown', (event) => {
 
 textarea?.addEventListener('input', () => {
   const text = textarea.value;
-  tributeText && (tributeText.textContent = text || '');
   counter && (counter.textContent = `${text.length} / 250`);
   localStorage.setItem('tribute', text);
 });
@@ -107,7 +105,6 @@ window.addEventListener('load', () => {
   const savedText = localStorage.getItem('tribute');
   if (savedText) {
     textarea.value = savedText;
-    tributeText && (tributeText.textContent = savedText);
     counter && (counter.textContent = `${savedText.length} / 250`);
   }
 
