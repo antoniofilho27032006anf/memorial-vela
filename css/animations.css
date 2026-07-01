@@ -153,26 +153,6 @@
 
 
 /* ==========================================
-   TEXTAREA
-========================================== */
-
-.message-area textarea{
-
-    transition:
-        border-color .3s,
-        box-shadow .3s,
-        background .3s;
-
-}
-
-.message-area textarea:focus{
-
-    background:rgba(255,255,255,.06);
-
-}
-
-
-/* ==========================================
    TÍTULO
 ========================================== */
 

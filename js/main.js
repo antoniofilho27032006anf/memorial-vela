@@ -3,9 +3,6 @@ const flame = document.querySelector('.flame');
 const light = document.querySelector('.light');
 const smoke = document.querySelectorAll('.smoke');
 
-const textarea = document.querySelector('textarea');
-const counter = document.getElementById('counter');
-
 const btnLight = document.querySelector('.primary');
 const btnOff = document.querySelector('.secondary');
 const statusTitle = document.getElementById('statusTitle');
@@ -69,12 +66,6 @@ candle?.addEventListener('keydown', (event) => {
   }
 });
 
-textarea?.addEventListener('input', () => {
-  const text = textarea.value;
-  counter && (counter.textContent = `${text.length} / 250`);
-  localStorage.setItem('tribute', text);
-});
-
 const startTime = Date.now();
 
 function updateTimer() {
@@ -101,12 +92,6 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.querySelector('.memorial')?.classList.add('show');
   }, 500);
-
-  const savedText = localStorage.getItem('tribute');
-  if (savedText) {
-    textarea.value = savedText;
-    counter && (counter.textContent = `${savedText.length} / 250`);
-  }
 
   const savedLight = localStorage.getItem('light');
   if (savedLight === 'on') {

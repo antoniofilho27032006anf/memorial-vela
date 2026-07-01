@@ -52,11 +52,6 @@
     height: 180px;
   }
 
-  .message-area textarea {
-    min-height: 118px;
-    font-size: 0.92rem;
-  }
-
   .buttons {
     flex-direction: column;
     width: 100%;
@@ -93,14 +88,6 @@
 
   .candle {
     transform: scale(0.76);
-  }
-
-  .message-area label {
-    font-size: 0.9rem;
-  }
-
-  .message-area textarea {
-    min-height: 108px;
   }
 
   footer {
